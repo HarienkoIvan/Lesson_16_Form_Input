@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <title> Lesson </title>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+
+<!-- 
+action - получатель данных формы,
+<form action="#"></form>
+
+method - метод передачи данных,
+get - значения по умолчанию (данные передаются в адресной строке)
+<form method="get" action="#"></form>
+
+post - данные передаются скрытно. 
+
+enctype - тип данных (для передачи данных, указываем multipart/form-data)
+<form enctype="multipart/form-data"action="#"></form>
+-->
+
+<form action="#">
+
+   <!-- Полдпись к полю При нажатии на подпись активируется необходимое поле для ввода-->
+<label for="input_01">Я подпись к полю</label>
+<input id="input_01" autocomplete="off" required placeholder="строка" name="string"value=""type="text">
+
+
+
+   <!-- Ввод данных  (поле для ввода) <input type="text">-->
+    <input type="text">
+    <!-- Поле будет заполнено, к примеру "Имя"
+     <input value="Имя" type="text">
+
+     Когда данные полетят на сервер будет переданно имя"username" 
+     или то что укажет пользователь.
+     <input name="username" value="Имя"type="text">
+
+   required этот атрибут говорит что это поле ОБЯЗАТНЕЛЬНОЕ для заполнения
+     <input required name="username" value="Имя"type="text"> -->
+
+      <!-- Вводится строка которая будет показываться когда поле пустое
+      к примеру "Введите имя" 
+      -->
+     <input required placeholder="Введите имя" name="username" value=""type="text">
+
+     <!-- Отключить подсказки при вводе данных (имя, электронный ящик) -->
+     <!-- <input autocomplete="off" placeholder="Введите имя" name="username" value=""type="text"> -->
+     
+     <!-- Ввод текста  -->
+     <input autocomplete="off" required placeholder="строка" name="string" value=""type="text">
+     <!-- Ввод числа -->
+     <input autocomplete="off" required placeholder="число" name="number" value=""type="number">
+    <!-- Ввод телефона -->
+     <input autocomplete="off" required placeholder="Номер теелфона" name="phone" value=""type="tel">
+<!-- Ввод почты -->
+     <input autocomplete="off" required placeholder="Почта" name="email" value=""type="email">
+    <!-- Календарь -->
+    <input autocomplete="off" required placeholder="Календарь" name="date " value=""type="date">
+<div>
+    <!-- Выбор данных - выбор И-множественный выбор (чекбокс) -->
+     <!-- input checked autocomplete .... Выбор по умолчанию-->
+<input autocomplete="off" required placeholder="чекбокс" name="check" value=""type="checkbox">Вопрос
+<input autocomplete="off" required placeholder="чекбокс" name="check" value=""type="checkbox">Вопрос
+</div>
+
+<!-- Ввод данных, единичный выбор (радио кнопка) Должен быть одинаковый name-->
+<input autocomplete="off" required placeholder="чекбокс" name="check" value=""type="radio">М
+<input autocomplete="off" required placeholder="чекбокс" name="check" value=""type="radio">Ж
+<div>
+<!-- В поле нельзя ничего вводить (отключенное поле)-->
+<input disabled autocomplete="off" required placeholder="строка" name="string" value=""type="text">
+</div>
+<div>
+<!-- Прикрепить файл -->
+<input autocomplete="off" required name="" name="file" value=""type="file">
+</div>
+<!-- Прикрепить много файлов -->
+<input autocomplete="off" multiple required name="" name="file" value=""type="file">
+<!-- 
+Прикрепить файлы определённого формата -->
+<input autocomplete="off" accept=".jpg, .png" multiple required name="file" value=""type="file">
+<!-- Ввод данных пароль -->
+<input autocomplete="off" required placeholder="пароль" name="pass" value=""type="password">
+
+
+<div>
+<!-- Ввод данных Многострочный -->
+ <textarea name="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, qui quas veritatis facilis voluptas velit in aspernatur doloremque dolorem similique placeat numquam totam, error sequi consequuntur. A aliquid soluta quasi!</textarea>
+</div>
+
+<!-- value Определяет значение элемента формы, которое будет отправлено на сервер или получено с помощью клиентских скриптов. -->
+
+<!-- Ввод данных Выпадающий список -->
+ <select name="select">
+<option value="1">Пункт №1</option>
+<option value="2">Пункт №2</option>
+<!-- selected value выбрать пункт по умолчанию -->
+<option selected value="3">Пункт №3</option>
+<option value="4">Пункт №4</option>
+ </select>
+
+ <!-- Кнопка -->
+  <button type="button">Я кнопка</button>
+  <!-- Кнопка с стилем reset очищает все поля  -->
+   <button type="reset">Кнопка reset</button>
+   <!-- Показывет что нужно заполнять поля-->
+   <button type="submit">submit</button>
+</form>
+________________________
+<!-- ---------- -->
+<form class="main__form form" action="#">
+<div class="form__line">
+   <label for="username"class="form__label">Введите имя</label>
+   <input id="username" autocomplete="off" type="text" name="username" class="form__input">
+</div>
+<div class="form__line">
+   <div class="checkbox">
+   <input id="car" autocomplete="off" type="checkbox" name="car" class="checkbox__input">
+   <label for="car"class="checkbox__label">Автомобиль?</label>
+</div>
+</div>
+<div class="form__line">
+   <div class="radiobuttons">
+      <div class="radiobuttons__item">
+   <input id="color_1" autocomplete="off" type="radio" name="color" class="radiobuttons__input">
+   <label for="color_1"class="radiobuttons__label">Зелёный</label>
+</div>
+<div class="radiobuttons__item">
+   <input id="color_2" autocomplete="off" type="radio" name="color" class="radiobuttons__input">
+   <label for="color_2"class="radiobuttons__label">Красный</label>
+   </div>
+</div>
+</div>
+
+<div class="form__line">
+   <div class="file">
+   <input id="file_1" class="file__input"type="file">
+   <label for="file_1"class="file__label">Выбрать файл</label>
+
+</div>
+</div>
+
+
+<div class="form__line">
+<select name="select" class="form__select">
+<option value="1"selected>Пункт №1</option>
+<option value="2">Пункт №2</option>
+<option value="3">Пункт №3</option>
+<option value="4">Пункт №4</option>
+</select>
+</div>
+
+
+<div class="form__line">
+   <textarea autocomplete="off" name="text" class="form__textarea"></textarea>
+</div>
+
+<button type="submit" class="form__button">Отправить</button>
+
+<div class="form__line">
+   <div class="switcher">
+   <input id="switcher" autocomplete="off" type="checkbox" name="switcher" class="switcher__input">
+   <label for="switcher"class="switcher__label"></label>
+</div>
+
+</form >
+
+      </main>
+      <footer class="footer"></footer>
+   </div>
+</body>
+
+</html>
